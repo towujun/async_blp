@@ -153,7 +153,7 @@ class HandlerBase:
         If session is successfully stopped, set `self.session_stopped`
         """
         msg = list(event_)[0]
-        msg_name = msg.asElement().name()
+        msg_name = str(msg.asElement().name())      # 原作者的重大bug
 
         if msg_name == 'SessionStarted':
             LOGGER.debug('%s: session opened', self.__class__.__name__)
